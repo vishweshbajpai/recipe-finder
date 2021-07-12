@@ -1,0 +1,103 @@
+.outer-container {
+  overflow: auto;
+  margin: 30px 20px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px 0px grey;
+}
+
+.recipe-title {
+  height: 50px;
+  background-color: peachpuff;
+  display: flex;
+}
+
+.recipe-title p {
+  text-align: center;
+  margin: auto;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.like-icon {
+  text-align: right;
+  position: relative;
+  left: -2%;
+  top: 25%;
+  height: fit-content;
+  cursor: pointer;
+}
+
+.red {
+  color: red;
+}
+.recipe-content {
+  background-color: antiquewhite;
+  overflow: auto;
+  min-height: 500px;
+  display: flex;
+}
+
+.recipe-img-container {
+  flex: 45%;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.recipe-img {
+  height: 400px;
+  width: 400px;
+  border: 3px solid #000000a3;
+  border-radius: 5px;
+  margin: 0 10px;
+}
+
+.recipe-details-container {
+  flex: 55%;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  font-weight: 600;
+}
+
+.categoryOfMeal {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.categoryOfMeal-headings {
+  margin: 0;
+  font-style: italic;
+}
+
+.ingredients-title {
+  margin-bottom: 10px;
+  margin-top: 0;
+  font-style: italic;
+}
+.ingredients-content {
+  height: 250px;
+  background-color: peachpuff;
+  margin-bottom: 10px;
+  margin-right: 20px;
+  padding: 10px 20px;
+  overflow: auto;
+  border-radius: 3px;
+}
+
+.recipes-title {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-style: italic;
+  text-align: center;
+}
+
+.recipes-content {
+  height: 200px;
+  background-color: peachpuff;
+  margin-bottom: 10px;
+  margin-right: 20px;
+  padding: 10px;
+  overflow: auto;
+  border-radius: 3px;
+  text-align: center;
+}
