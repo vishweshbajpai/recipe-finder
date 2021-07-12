@@ -26,6 +26,10 @@ header h2 {
   height: 40px;
 }
 
+.search:focus {
+  border: 1px solid black;
+}
+
 .search-button {
   margin-left: 20px;
   height: 40px;
@@ -36,6 +40,10 @@ header h2 {
 
 .search-button:hover {
   background-color: #ced4da;
+}
+
+.search-button:active {
+  border: 1px solid black;
 }
 
 .sub-heading {

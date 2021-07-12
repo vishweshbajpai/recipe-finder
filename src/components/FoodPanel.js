@@ -21,11 +21,12 @@ class FoodPanel extends Component {
   }
 
   render() {
-    console.log("Inside COmponent", this.props.mealsObj.strArea);
     return (
       <div className="outer-container">
         <div className="recipe-title">
-          <p>{this.props.mealsObj.strMeal}</p>
+          <a href={this.props.mealsObj.strSource} target="_blank">
+            <p>{this.props.mealsObj.strMeal}</p>
+          </a>
           <span
             className={this.state.likeButtonClass}
             onClick={() => {

@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./App.css";
 import axios from "axios";
 import FoodPanel from "./components/FoodPanel";
-// import Button from "@material-ui/core/Button";
 
 class App extends Component {
   constructor(props) {
@@ -23,13 +22,10 @@ class App extends Component {
             document.getElementsByClassName("sub-heading")[0].innerHTML =
               "No Data has been recieved.";
             this.setState({ mealsObj: [] });
-            // document.getElementById("outer-container").innerHTML = "";
           } else {
             document.getElementsByClassName("sub-heading")[0].innerHTML = "";
             this.setState({ mealsObj: res.data.meals });
-            console.log(res.data);
             console.log(res.data.meals);
-            // this.temp();
           }
         })
         .catch(function (err) {
@@ -39,14 +35,6 @@ class App extends Component {
       document.getElementsByClassName("sub-heading")[0].style.display = "block";
     }
   }
-
-  // temp() {
-  //   document.getElementById("cards").innerHTML = this.state.mealsObj.map(
-  //     (obj) => {
-  //       return <FoodPanel mealsObj={obj} />;
-  //     }
-  //   );
-  // }
 
   render() {
     console.log("Render called");
@@ -64,23 +52,14 @@ class App extends Component {
             <button className="search-button" onClick={this.searchClickHandler}>
               Get Recipes
             </button>
-            {/* <Button
-              variant="contained"
-              className="search-button"
-              onClick={this.searchClickHandler}
-            >
-              Get Recipes
-            </Button> */}
           </div>
         </header>
 
         <h3 className="sub-heading">
           Type a Dish Name to Search for it's ingredients
         </h3>
-        {/* <div id="cards"></div> */}
-
         {this.state.mealsObj.map((obj) => {
-          return <FoodPanel mealsObj={obj} />;
+          return <FoodPanel key={obj.idMeal} mealsObj={obj} />;
         })}
       </div>
     );
