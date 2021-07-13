@@ -14,10 +14,18 @@
 .recipe-title a {
   text-align: center;
   margin: auto;
-  font-size: 30px;
+  font-size: 27px;
   font-weight: 600;
   text-decoration: none;
   color: black;
+}
+
+.recipe-title a:hover {
+  font-size: 28px;
+}
+
+.recipe-title a:active {
+  font-size: 27px;
 }
 
 .recipe-title p {
