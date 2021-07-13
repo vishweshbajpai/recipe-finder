@@ -19,12 +19,30 @@ class FoodPanel extends Component {
       this.setState({ likeClicked: false, likeButtonClass: "like-icon" });
     }
   }
+  temp() {
+    var arr = [];
+    for (let i = 1; i <= 20; i++) {
+      let x1 = "strIngredient" + i;
+      let x2 = "strMeasure" + i;
+      if (this.props.mealsObj[x1] !== "" && this.props.mealsObj[x2] !== "") {
+        let t = this.props.mealsObj[x1] + " --- " + this.props.mealsObj[x2];
+        arr.push(t);
+      }
+    }
+    return arr.map((val, pos) => {
+      return <p key={pos}>{val}</p>;
+    });
+  }
 
   render() {
     return (
       <div className="outer-container">
         <div className="recipe-title">
-          <a href={this.props.mealsObj.strSource} target="_blank">
+          <a
+            href={this.props.mealsObj.strSource}
+            rel="noreferrer"
+            target="_blank"
+          >
             <p>{this.props.mealsObj.strMeal}</p>
           </a>
           <span
@@ -48,17 +66,22 @@ class FoodPanel extends Component {
             <div className="categoryOfMeal">
               <p>
                 <span className="categoryOfMeal-headings">
-                  Category of Meal -{" "}
+                  Category of Meal -
                 </span>
-                {this.props.mealsObj.strCategory}
+                {" " + this.props.mealsObj.strCategory}
               </p>
               <p>
-                <span className="categoryOfMeal-headings">Area of Meal - </span>
-                {this.props.mealsObj.strArea}
+                <span className="categoryOfMeal-headings">Area of Meal -</span>
+                {" " + this.props.mealsObj.strArea}
               </p>
             </div>
             <p className="ingredients-title">Ingredients</p>
-            <div className="ingredients-content"></div>
+            <div className="ingredients-content">
+              {this.temp()}
+              {/* {this.arr.map((val) => {
+                return <p>{val}</p>;
+              })} */}
+            </div>
             <p className="recipes-title">Recipes</p>
             <div className="recipes-content">
               {this.props.mealsObj.strInstructions}
