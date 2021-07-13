@@ -7,11 +7,12 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      mealsObj: [],
+      mealsObj: [], //Stores the response data
     };
     this.searchClickHandler = this.searchClickHandler.bind(this);
   }
 
+  //Function to handler AJAX call when 'Get Recipes' button is clicked
   searchClickHandler() {
     var val = document.getElementById("search-input").value;
     if (val !== "") {
@@ -20,7 +21,7 @@ class App extends Component {
         .then((res) => {
           if (res.data.meals === null) {
             document.getElementsByClassName("sub-heading")[0].innerHTML =
-              "No Data has been recieved.";
+              "No Data has been received.";
             this.setState({ mealsObj: [] });
           } else {
             document.getElementsByClassName("sub-heading")[0].innerHTML = "";

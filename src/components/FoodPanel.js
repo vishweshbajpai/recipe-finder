@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import "./FoodPanel.css";
 
+//FoodPanel component
 class FoodPanel extends Component {
   constructor(props) {
     super(props);
@@ -12,6 +13,7 @@ class FoodPanel extends Component {
     this.likeCLickHandler = this.likeCLickHandler.bind(this);
   }
 
+  //Function to handle state of like button
   likeCLickHandler() {
     if (this.state.likeClicked === false) {
       this.setState({ likeClicked: true, likeButtonClass: "like-icon red" });
@@ -19,13 +21,20 @@ class FoodPanel extends Component {
       this.setState({ likeClicked: false, likeButtonClass: "like-icon" });
     }
   }
-  temp() {
+
+  //Function to render the ingredients from response
+  ingredientsDisplayHandler() {
     var arr = [];
     for (let i = 1; i <= 20; i++) {
       let x1 = "strIngredient" + i;
       let x2 = "strMeasure" + i;
-      if (this.props.mealsObj[x1] !== "" && this.props.mealsObj[x2] !== "") {
-        let t = this.props.mealsObj[x1] + " --- " + this.props.mealsObj[x2];
+      if (
+        this.props.mealsObj[x1] !== "" &&
+        this.props.mealsObj[x1] !== null &&
+        this.props.mealsObj[x2] !== "" &&
+        this.props.mealsObj[x2] !== null
+      ) {
+        let t = this.props.mealsObj[x1] + " ---- " + this.props.mealsObj[x2];
         arr.push(t);
       }
     }
@@ -77,10 +86,7 @@ class FoodPanel extends Component {
             </div>
             <p className="ingredients-title">Ingredients</p>
             <div className="ingredients-content">
-              {this.temp()}
-              {/* {this.arr.map((val) => {
-                return <p>{val}</p>;
-              })} */}
+              {this.ingredientsDisplayHandler()}
             </div>
             <p className="recipes-title">Recipes</p>
             <div className="recipes-content">

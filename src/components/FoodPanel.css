@@ -44,6 +44,7 @@
 .red {
   color: red;
 }
+
 .recipe-content {
   background-color: antiquewhite;
   overflow: auto;
@@ -88,6 +89,7 @@
   margin-top: 0;
   font-style: italic;
 }
+
 .ingredients-content {
   height: 250px;
   background-color: peachpuff;
